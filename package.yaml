@@ -1,0 +1,39 @@
+name:                situation-gravity
+version:             0.1.0.0
+github:              "flunc/situation-gravity"
+license:             BSD3
+author:              "Flunc"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+description:         Please see the README on GitHub at <https://github.com/flunc/situation-gravity#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+
+library:
+  source-dirs: src
+
+executables:
+  situation-gravity-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - situation-gravity
+
+tests:
+  situation-gravity-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - situation-gravity
